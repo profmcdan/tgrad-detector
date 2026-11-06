@@ -1,0 +1,28 @@
+=== Building AMLSim-style cyclic dataset ===
+Synthetic AML: 6000 nodes, 20684 edges, 2182 illicit (cycle) nodes.
+  Split: train nodes=4738, test nodes=1247.
+  cycle structural feats: mean (A^3)_ii illicit=0.224 benign=0.007
+  test illicit prevalence = 0.352
+
+=== SOTA GNN baselines (structure-aware) ===
+  GCN                AUC=0.691 F1=0.519
+  GraphSAGE          AUC=0.614 F1=0.261
+  GAT                AUC=0.711 F1=0.527
+  GIN                AUC=0.657 F1=0.502
+  Graph Transformer  AUC=0.577 F1=0.361
+
+=== Training T-GRAD ===
+  epoch 1/15  loss=143.9981
+  epoch 4/15  loss=105.3602
+  epoch 7/15  loss=70.0320
+  epoch 10/15  loss=52.3295
+  epoch 13/15  loss=42.4277
+  epoch 15/15  loss=37.8790
+  reconstruction (guided / unguided) ...
+  Attributes only                AUC=0.486 F1=0.169
+  + Temporal encoder             AUC=0.679 F1=0.353
+  + Cycle structural reasoning   AUC=0.923 F1=0.699
+  + Diffusion guidance (Full)    AUC=0.925 F1=0.700
+  T-GRAD                 AUC=0.929 F1=0.688 guidance gain=-0.011
+
+REVISION DONE seed 1 | A+E+M 0.921 | A+M 0.935 | best matched GNN 0.944

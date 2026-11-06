@@ -1,0 +1,37 @@
+=== T-GRAD scalability sweep (AMLSim-style cyclic benchmark) ===
+sizes=[200000, 400000, 600000, 800000, 1000000, 1200000, 2000000]  enc_epochs=3 enc_cap=120000 gsage_epochs=120 head_epochs=250
+
+--- target 200,000 edges ---
+Synthetic AML: 57971 nodes, 200034 edges, 21082 illicit (cycle) nodes.
+  Split: train nodes=45588, test nodes=12286.
+  N=  57971 E=  200034 prev=0.364 | T-GRAD AUC=0.994 F1=0.965 | SAGE AUC=0.688 F1=0.553 | infer=14.7s (13,630 e/s) wall=226.9s rss=618MB
+
+--- target 400,000 edges ---
+Synthetic AML: 115942 nodes, 399922 edges, 41821 illicit (cycle) nodes.
+  Split: train nodes=91593, test nodes=24161.
+  N= 115942 E=  399922 prev=0.361 | T-GRAD AUC=0.996 F1=0.979 | SAGE AUC=0.694 F1=0.554 | infer=32.0s (12,495 e/s) wall=320.6s rss=1880MB
+
+--- target 600,000 edges ---
+Synthetic AML: 173913 nodes, 600113 edges, 62861 illicit (cycle) nodes.
+  Split: train nodes=137427, test nodes=36215.
+  N= 173913 E=  600113 prev=0.361 | T-GRAD AUC=0.998 F1=0.989 | SAGE AUC=0.706 F1=0.576 | infer=43.1s (13,918 e/s) wall=408.1s rss=1883MB
+
+--- target 800,000 edges ---
+Synthetic AML: 231884 nodes, 800104 edges, 83877 illicit (cycle) nodes.
+  Split: train nodes=182923, test nodes=48581.
+  N= 231884 E=  800104 prev=0.362 | T-GRAD AUC=0.998 F1=0.992 | SAGE AUC=0.703 F1=0.571 | infer=58.6s (13,645 e/s) wall=533.5s rss=1231MB
+
+--- target 1,000,000 edges ---
+Synthetic AML: 289855 nodes, 1000150 edges, 105072 illicit (cycle) nodes.
+  Split: train nodes=229002, test nodes=60402.
+  N= 289855 E= 1000150 prev=0.362 | T-GRAD AUC=0.999 F1=0.995 | SAGE AUC=0.706 F1=0.573 | infer=76.0s (13,159 e/s) wall=676.1s rss=1256MB
+
+--- target 1,200,000 edges ---
+Synthetic AML: 347826 nodes, 1199821 edges, 125537 illicit (cycle) nodes.
+  Split: train nodes=275247, test nodes=72050.
+  N= 347826 E= 1199821 prev=0.361 | T-GRAD AUC=0.999 F1=0.996 | SAGE AUC=0.706 F1=0.576 | infer=89.5s (13,410 e/s) wall=888.1s rss=1265MB
+
+--- target 2,000,000 edges ---
+Synthetic AML: 579710 nodes, 1999742 edges, 209656 illicit (cycle) nodes.
+  Split: train nodes=456669, test nodes=122111.
+  N= 579710 E= 1999742 prev=0.362 | T-GRAD AUC=0.999 F1=0.997 | SAGE AUC=0.710 F1=0.581 | infer=162.6s (12,297 e/s) wall=4167.9s rss=2186MB

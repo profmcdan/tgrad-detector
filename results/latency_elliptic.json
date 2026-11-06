@@ -1,0 +1,47 @@
+{
+  "num_nodes": 203769,
+  "num_labelled": 46564,
+  "num_edges": 234355,
+  "hardware": {
+    "cpu": "Apple M5",
+    "cores": "10",
+    "ram_gb": 24.0,
+    "os": "macOS 26.6.2",
+    "threads": 8
+  },
+  "latency": {
+    "GCN": {
+      "total_sec": 0.0751238340017153,
+      "ms_per_labelled_node": 0.0016133458036619555
+    },
+    "GraphSAGE": {
+      "total_sec": 0.1893670419958653,
+      "ms_per_labelled_node": 0.004066812172404976
+    },
+    "GAT": {
+      "total_sec": 0.1813701249920996,
+      "ms_per_labelled_node": 0.0038950718364423073
+    },
+    "GIN": {
+      "total_sec": 0.10529000000678934,
+      "ms_per_labelled_node": 0.0022611889014429462
+    },
+    "Graph Transformer": {
+      "total_sec": 0.45871345899649896,
+      "ms_per_labelled_node": 0.00985124686445535
+    },
+    "RF, attributes": {
+      "total_sec": 0.0936187090119347,
+      "ms_per_labelled_node": 0.0020105383775434822
+    },
+    "T-GRAD": {
+      "total_sec": 16.890824081987375,
+      "encoder_sec": 14.080762208002852,
+      "energy_head_sec": 0.03290037499391474,
+      "guided_reconstruction_sec": 2.6489903329929803,
+      "forest_predict_sec": 0.12817116599762812,
+      "head_only_sec": 0.03290037499391474,
+      "ms_per_labelled_node": 0.3627442677172789
+    }
+  }
+}

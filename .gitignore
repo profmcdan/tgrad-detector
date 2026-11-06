@@ -1,0 +1,8 @@
+__pycache__/
+*.py[oc]
+*.egg-info/
+.venv/
+data/
+# per-seed arrays written by 01_elliptic.py contain Elliptic labels, which are not redistributed
+results/**/arrays.npz
+.DS_Store

@@ -1,0 +1,32 @@
+Device: cpu
+
+=== Loading Elliptic (standard temporal protocol) ===
+Elliptic loaded: 203769 nodes, 234355 edges.
+  Labeled: 4545 illicit, 42019 licit, 157205 unknown.
+  Temporal split (t<= 34): train nodes=29894, test nodes=16670.
+pos_weight (licit/illicit) = 7.63
+
+=== Training SOTA GNN baselines ===
+  GCN                AUC=0.893 F1=0.566 PR=0.644
+  GraphSAGE          AUC=0.909 F1=0.696 PR=0.715
+  GAT                AUC=0.877 F1=0.533 PR=0.606
+  GIN                AUC=0.853 F1=0.536 PR=0.504
+  Graph Transformer  AUC=0.870 F1=0.630 PR=0.643
+
+=== Training T-GRAD (temporal encoder + VP-SDE diffusion + energy guidance) ===
+  epoch 1/6  mean loss=86.3408
+  epoch 2/6  mean loss=35.6642
+  epoch 3/6  mean loss=27.9263
+  epoch 4/6  mean loss=26.2777
+  epoch 5/6  mean loss=24.9855
+  epoch 6/6  mean loss=24.8045
+  Extracting node embeddings ...
+  Running guided / unguided reverse-SDE reconstruction ...
+  Ablation: attributes only (RF)         AUC=0.942 F1=0.780 PR=0.801
+  Ablation: + temporal encoder (RF)      AUC=0.932 F1=0.765 PR=0.781
+  Ablation: + diffusion signals (RF)     AUC=0.933 F1=0.760 PR=0.784
+  T-GRAD neural head (full)              AUC=0.893 F1=0.557 PR=0.624
+  T-GRAD (Ours)                          AUC=0.933 F1=0.760 PR=0.784
+
+REVISION DONE elliptic seed 0 | posterior AUC 0.825 | raw Brier 0.151 | RF attr 0.942 | RF+enc 0.932
+PAPER3 FINAL seed 0 | chosen forest {'forest': {'val_PR-AUC': 0.9811053571853753, 'val_ROC-AUC': 0.9943330498290194}, 'perceptron': {'val_PR-AUC': 0.9594619484334165, 'val_ROC-AUC': 0.9881325846812333}} | gg 0.012

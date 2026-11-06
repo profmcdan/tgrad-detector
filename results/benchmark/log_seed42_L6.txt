@@ -1,0 +1,32 @@
+=== Building AMLSim-style cyclic dataset ===
+Synthetic AML: 6000 nodes, 20669 edges, 2166 illicit (cycle) nodes.
+  Split: train nodes=4719, test nodes=1270.
+  cycle structural feats: mean (A^3)_ii illicit=0.212 benign=0.005
+  test illicit prevalence = 0.340
+
+=== SOTA GNN baselines (structure-aware) ===
+  GCN                AUC=0.687 F1=0.502
+  GraphSAGE          AUC=0.651 F1=0.296
+  GAT                AUC=0.739 F1=0.558
+  GIN                AUC=0.730 F1=0.581
+  Graph Transformer  AUC=0.572 F1=0.337
+
+=== Training T-GRAD ===
+  epoch 1/15  loss=146.5602
+  epoch 4/15  loss=109.1804
+  epoch 7/15  loss=73.6466
+  epoch 10/15  loss=52.7594
+  epoch 13/15  loss=42.3891
+  epoch 15/15  loss=38.0491
+  reconstruction (guided / unguided) ...
+  Attributes only                AUC=0.490 F1=0.138
+  + Temporal encoder             AUC=0.668 F1=0.362
+  + Cycle structural reasoning   AUC=0.937 F1=0.695
+  + Diffusion guidance (Full)    AUC=0.935 F1=0.663
+  T-GRAD                 AUC=0.935 F1=0.671 guidance gain=+0.033
+  learned-plausibility {'q': 1.0, 'bin': 0.955, 'const': 0.84, 'learned': 0.824, 'shuffled': 0.824, 'plaus_rank_auc': nan, 'mean_plaus': 0.731}
+  learned-plausibility {'q': 0.8, 'bin': 0.724, 'const': 0.794, 'learned': 0.783, 'shuffled': 0.783, 'plaus_rank_auc': 0.69, 'mean_plaus': 0.731}
+  learned-plausibility {'q': 0.6, 'bin': 0.573, 'const': 0.689, 'learned': 0.689, 'shuffled': 0.689, 'plaus_rank_auc': 0.468, 'mean_plaus': 0.731}
+  learned-plausibility {'q': 0.4, 'bin': 0.514, 'const': 0.526, 'learned': 0.526, 'shuffled': 0.526, 'plaus_rank_auc': 0.568, 'mean_plaus': 0.731}
+
+REVISION DONE seed 42 | A+E+M 0.93 | A+M 0.936 | best matched GNN 0.952
